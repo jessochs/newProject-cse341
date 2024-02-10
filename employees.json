@@ -1,0 +1,47 @@
+{
+    "employee" : {
+        "fname" : "Harry",
+        "lname" : "Potter",
+        "employeeId": "ww331",
+        "jobPosition" : "Head of Auror Department",
+        "startDate" : "09/21/2007",
+        "birthday" : "07/31/1980",
+        "address" : "7722 Green Grass Ln London, England "
+    },
+    "employee2" : {
+        "fname" : "Ron",
+        "lname" : "Weasley",
+        "employeeId": "ww332",
+        "jobPosition" : "Weasley's Joke",
+        "startDate" : "12/13/2010",
+        "birthday" : "03/01/1980",
+        "address" : "456 Whistler St London, England"
+    },
+    "employee3" : {
+        "fname" : "Hermione",
+        "lname" : "Granger-Weasley",
+        "employeeId": "ww333",
+        "jobPosition" : "Minister of agic",
+        "startDate" : "07/13/2019",
+        "birthday" : "09/19/1979",
+        "address" : "456 Whistler St London, England"
+    },
+    "employee4" : {
+        "fname" : "Minerva",
+        "lname" : "McGonagal",
+        "employeeId": "ww025",
+        "jobPosition" : "Hogwart's Headmaster",
+        "startDate" : "08/10/1995",
+        "birthday" : "04/03/1943",
+        "address" : "Hogwarts Scotland"
+    },
+    "employee5" : {
+        "fname" : "Neville",
+        "lname" : "Longbottom",
+        "employeeId": "ww451",
+        "jobPosition" : "Herbology Professor",
+        "startDate" : "08/10/2005",
+        "birthday" : "12/31/1980",
+        "address" : "Hogwarts Scotland"
+    }
+}
