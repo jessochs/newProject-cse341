@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Contacts API",
+    "description": "Employees API",
     "version": "1.0.0"
   },
   "host": "new-project-cse341.onrender.com",
