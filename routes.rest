@@ -1,0 +1,43 @@
+GET http://localhost:8080/employees
+###
+GET http://localhost:8080/employees/65c7a9242a69027333932ef5
+###
+GET http://localhost:8080/employees/65c7a94b2a69027333932ef6
+###
+GET http://localhost:8080/employees/65c7a95e2a69027333932ef7
+###
+GET http://localhost:8080/employees/65c7a9722a69027333932ef8
+###
+GET http://localhost:8080/employees/65c7a9962a69027333932ef9
+
+### CREATE
+POST http://localhost:8080/employees HTTP/1.1
+content-type: application/json
+
+{
+        "fname" : "Ginny",
+        "lname" : "Weasley-Potter",
+        "employeeId": "ww458",
+        "jobPosition" : "Quidirch Correspondant",
+        "startDate" : "08/10/2010",
+        "birthday" : "06/31/1983",
+        "address" : "7722 Green Grass Ln London, England"
+}
+
+### UPDATE
+PUT http://localhost:8080/employees/65c7a9722a69027333932ef8 HTTP/1.1
+content-type: application/json
+
+{
+        "fname" : "Minerva",
+        "lname" : "McGonagal",
+        "employeeId": "ww030",
+        "jobPosition" : "Hogwart's Headmaster",
+        "startDate" : "08/10/1995",
+        "birthday" : "04/03/1943",
+        "address" : "Hogwarts Scotland"
+}
+
+### DELETE
+DELETE http://localhost:8080/employees/65c7a9962a69027333932ef9 HTTP/1.1
+
