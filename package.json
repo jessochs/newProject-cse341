@@ -18,6 +18,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "swagger": "node ./swagger.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
