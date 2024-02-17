@@ -2,20 +2,39 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    const result = await mongodb.getDb().db().collection('employees').find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-type', 'application/json');
+  mongodb
+    .getDb()
+    .db()
+    .collection('employees')
+    .find()
+    .toArray((err, lists) => {
+      if(err) {
+        res.status(400).json({ message: err});
+    
+      }
+      res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
     });
 };
 
 const getSingle = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('You must have a valid id.');
+  }
     const userId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection('employees').find({ _id: userId });
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
-    });
+    mongodb
+      .getDb()
+      .db()
+      .collection('employees')
+      .find({ _id: userId})
+      .toArray((err, result) => {
+        if(err) {
+          res.status(400).json({ message: err});
+      
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result[0]);
+      });
 };
 
 const createEmployee = async (req, res) => {
@@ -38,6 +57,9 @@ const createEmployee = async (req, res) => {
 };
 
 const updateEmployee = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('You need a vaild id to update an employee.')
+  }
     const userId = new ObjectId(req.params.id);
     const employee = {
         fname: req.body.fname,
@@ -60,6 +82,9 @@ const updateEmployee = async (req, res) => {
 };
 
 const toDelete = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('You need a valid id to delete an employee');
+  }
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('employees').deleteOne({_id: userId}, true);
     console.log(response);
