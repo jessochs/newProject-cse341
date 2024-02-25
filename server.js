@@ -8,7 +8,7 @@ const app = express();
 
 const { auth, requiresAuth } = require('express-openid-connect');
 
-
+// these all need to be out in the .env somehow
 const config = {
   authRequired: false,
   auth0Logout: true,
