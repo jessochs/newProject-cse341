@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
+require('dotenv').config();
+
+const app = express();
 
 
 const { auth, requiresAuth } = require('express-openid-connect');
@@ -11,7 +14,8 @@ const config = {
   auth0Logout: true,
   baseURL: process.env.BASE_URL,
   clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.ISSUER_BASE_URL,
+  issuerBaseURL: 'https://dev-uv2ukics8urr50jv.us.auth0.com',
+  //   process.env.ISSUER_BASE_URL
   secret: process.env.SECRET 
 };
 
@@ -31,15 +35,15 @@ app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user, null, 2));
 });
 
-app.listen(8080, function() {
-  console.log('Listening on http://localhost:8080');
+app.listen(3000, function() {
+  console.log('Listening on http://localhost:3000');
 });
 
 const swaggerDocument = require('./swagger.json');
 
 const mongodb = require('./db/connect');
 // const contactRoutes = require('./routes/contacts');
-const app = express();
+
 
 const port = process.env.PORT || 8080;
 
