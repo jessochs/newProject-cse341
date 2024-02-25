@@ -16,7 +16,7 @@ const config = {
   clientID: process.env.CLIENT_ID,
   issuerBaseURL: 'https://dev-uv2ukics8urr50jv.us.auth0.com',
   //   process.env.ISSUER_BASE_URL
-  secret: process.env.SECRET 
+  secret: '6C6PE242cLx62t7_k_-aMKkXtanojkhO4OUUOZormvmgmTEf3GpCWnm9ZsD_5DIy'
 };
 
 // The `auth` router attaches /login, /logout
