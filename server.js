@@ -48,7 +48,7 @@ const swaggerDocument = require('./swagger.json');
 const port = process.env.PORT || 8080;
 
 app
-.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+// .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
