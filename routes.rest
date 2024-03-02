@@ -85,3 +85,78 @@ content-type: application/json
 ### DELETE
 DELETE https://new-project-cse341.onrender.com/employees/65c7a9962a69027333932ef9 HTTP/1.1
 
+# Employee Project routes:
+
+GET http://localhost:8080/employee_projects
+
+###
+GET http://localhost:8080/employee_projects/65e23cf6760d1d87e21b4733 
+###
+GET http://localhost:8080/employee_projects/65e23df8760d1d87e21b4734
+###
+GET http://localhost:8080/employee_projects/65e23ec6760d1d87e21b4736
+###
+GET http://localhost:8080/employee_projects/65e23f22760d1d87e21b4737
+###
+GET http://localhost:8080/employee_projects/65e23fba760d1d87e21b473c
+
+### CREATE
+POST http://localhost:8080/employee_projects HTTP/1.1
+content-type: application/json
+
+{
+        "projectName": "Quidditch World Cup",
+        "projectDate": "07/25/2007",
+        "lead": "Ginny Weasley-Potter"
+}
+### UPDATE
+
+PUT http://localhost:8080/employee_projects/65e23cf6760d1d87e21b4733 HTTP/1.1
+content-type: application/json
+
+{
+        "projectName": "Free House Elves",
+        "projectDate": "02/29/2016",
+        "lead": "Hermoine Granger-Weasley"
+}
+
+### DELETE
+DELETE http://localhost:8080/employee_projects/65e23f22760d1d87e21b4737 HTTP/1.1
+
+### RENDER EMPLOYEE PROJECT REQUESTS
+GET https://new-project-cse341.onrender.com/employee_projects
+
+###
+GET https://new-project-cse341.onrender.com/employee_projects/65e23cf6760d1d87e21b4733 
+###
+GET https://new-project-cse341.onrender.com/employee_projects/65e23df8760d1d87e21b4734
+###
+GET https://new-project-cse341.onrender.com/employee_projects/65e23ec6760d1d87e21b4736
+###
+GET https://new-project-cse341.onrender.com/employee_projects/65e23f22760d1d87e21b4737
+###
+GET https://new-project-cse341.onrender.com/employee_projects/65e23fba760d1d87e21b473c
+
+### CREATE
+POST https://new-project-cse341.onrender.com/employee_projects HTTP/1.1
+content-type: application/json
+
+{
+        "projectName": "Quidditch World Cup",
+        "projectDate": "07/25/2007",
+        "lead": "Ginny Weasley-Potter"
+}
+
+### UPDATE
+PUT https://new-project-cse341.onrender.com/employee_projects/65e23cf6760d1d87e21b4733 HTTP/1.1
+content-type: application/json
+
+{
+       
+        "projectName": "Free House Elves",
+        "projectDate": "02/29/2016",
+        "lead": "Hermoine Granger-Weasley" 
+}
+
+### DELETE
+DELETE https://new-project-cse341.onrender.com/employee_projects/65e23f22760d1d87e21b4737 HTTP/1.1
