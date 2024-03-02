@@ -1,7 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res) => {
+const getAllProjects = async (req, res) => {
     mongodb
       .getDb()
       .db()
@@ -17,7 +17,7 @@ const getAll = async (req, res) => {
       });
   };
 
-  const getSingle = async (req, res) => {
+  const getSingleProject = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('You must have a valid id.');
     }
@@ -73,7 +73,7 @@ const updateProject = async (req, res) => {
     
 };
 
-const toDelete = async (req, res) => {
+const deleteProject = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('You need a valid id to delete a project');
     }
@@ -88,4 +88,4 @@ const toDelete = async (req, res) => {
         }
   };
 
-  module.exports = { getAll, getSingle, createProject, updateProject, toDelete};
+  module.exports = { getAllProjects, getSingleProject, createProject, updateProject, deleteProject};
