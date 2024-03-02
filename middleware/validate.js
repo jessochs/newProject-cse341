@@ -47,5 +47,5 @@ const saveProject = (req, res, next) => {
 
 module.exports = {
     saveEmployee,
-    saveProject
+    saveProject,
 };
