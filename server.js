@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
+const mongodb = require('./db/connect');
 require('dotenv').config();
 
 const app = express();
@@ -35,15 +36,14 @@ app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user, null, 2));
 });
 
-app.listen(3000, function() {
-  console.log('Listening on http://localhost:3000');
-});
+// app.listen(3000, function() {
+//   console.log('Listening on http://localhost:3000');
+// });
 
 const swaggerDocument = require('./swagger.json');
 
-const mongodb = require('./db/connect');
-// const contactRoutes = require('./routes/contacts');
 
+// const contactRoutes = require('./routes/contacts');
 
 const port = process.env.PORT || 8080;
 
