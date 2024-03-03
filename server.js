@@ -36,17 +36,13 @@ app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user, null, 2));
 });
 
-// app.listen(3000, function() {
-//   console.log('Listening on http://localhost:3000');
-// });
-
 const swaggerDocument = require('./swagger.json');
 
 
 const port = process.env.PORT || 8080;
 
 app
-.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+.use(swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -67,3 +63,4 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
+// ('/api-docs', 
