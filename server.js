@@ -24,7 +24,7 @@ const config = {
 // and /callback routes to the baseURL
 app.use(auth(config));
 
-// req.oidc.isAuthenticated is provided from the auth router
+
 app.get('/', (req, res) => {
   res.send(
     req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out'
@@ -42,7 +42,7 @@ const swaggerDocument = require('./swagger.json');
 const port = process.env.PORT || 8080;
 
 app
-.use(swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+// .use(swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
