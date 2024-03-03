@@ -42,7 +42,7 @@ const swaggerDocument = require('./swagger.json');
 const port = process.env.PORT || 8080;
 
 app
-// .use(swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -63,4 +63,4 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
-// ('/api-docs', 
+// 
